@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 
 import { DropdownModule } from './searchModule/dropdown.module';
 
+import { WeatherService } from './services/weather.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -15,7 +17,7 @@ import { DropdownModule } from './searchModule/dropdown.module';
     DropdownModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
