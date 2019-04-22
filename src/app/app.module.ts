@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { DropdownModule } from './searchModule/dropdown.module';
 
 import { WeatherService } from './services/weather.service';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { WeatherService } from './services/weather.service';
     DropdownModule,
     AppRoutingModule
   ],
-  providers: [WeatherService],
+  providers: [WeatherService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

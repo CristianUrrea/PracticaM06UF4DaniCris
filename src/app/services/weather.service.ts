@@ -8,9 +8,9 @@ export class WeatherService {
 
   constructor() { }
 
-  async getCity(){
+  async getCity(city, time){
     try{
-      const city_res = await fetch(`${CONSTANTS_WEATHER.url}location/44418`);
+      const city_res = await fetch(`${CONSTANTS_WEATHER.url}location/${city}/${time}`);
       return await city_res.json();
     } catch(e){
       console.log(e);
