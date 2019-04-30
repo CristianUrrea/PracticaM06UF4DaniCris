@@ -11,7 +11,7 @@ import { DatePipe } from '@angular/common';
 })
 export class CityComponent implements OnInit {
   cityNum:number;
-  cityWeather:[];
+  cityWeather:string;
   fromDate;
   toDate;
   citys:Array<Object> = [
