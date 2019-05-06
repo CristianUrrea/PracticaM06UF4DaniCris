@@ -45,7 +45,10 @@ export class CityComponent implements OnInit {
     this.cityNum = +this.cityNum;
     console.log(this.cityNum);
     const city_res = await this.weatherService.getCity(this.cityNum, dateSendingToServer);
-    this.cityWeather = JSON.stringify(city_res);
+
+    // this.cityWeather = JSON.stringify(city_res[0]);
+    this.cityWeather = city_res;
+
     console.log(city_res);
   }
 }
