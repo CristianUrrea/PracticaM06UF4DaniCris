@@ -1,1 +1,3 @@
-<router-outlet></router-outlet>
+<!-- <app-navbar [nombre]=''></app-navbar> -->
+ <app-navbar  *ngIf="checkLogin==false"></app-navbar>
+<router-outlet  *ngIf="checkLogin==false"></router-outlet>

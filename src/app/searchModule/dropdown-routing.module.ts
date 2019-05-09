@@ -5,7 +5,6 @@ import { CityComponent } from './city/city.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/city', pathMatch: 'full' },
   {path: 'city', component: CityComponent}
 
 ];

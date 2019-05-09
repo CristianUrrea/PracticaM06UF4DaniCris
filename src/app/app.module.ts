@@ -9,6 +9,8 @@ import { DropdownModule } from './searchModule/dropdown.module';
 import { WeatherService } from './services/weather.service';
 import { DatePipe } from '@angular/common';
 
+import { NavbarModule } from './navbarModule/navbar.module';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,9 +18,11 @@ import { DatePipe } from '@angular/common';
   imports: [
     BrowserModule,
     DropdownModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NavbarModule
+
   ],
   providers: [WeatherService, DatePipe],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+  export class AppModule { }

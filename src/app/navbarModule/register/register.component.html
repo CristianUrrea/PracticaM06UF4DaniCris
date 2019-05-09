@@ -1,3 +1,13 @@
-<p>
-  register works!
-</p>
+<div>
+          <form>
+              <div >
+                <input  [(ngModel)]="this.username" type="text" name="username" placeholder="Nombre">
+              </div>
+              <div >
+                <input  [(ngModel)]="this.pass" type="password" name="password" placeholder="Contraseña" required>
+              </div>
+              <div >
+                <button (click)="registro()" type="button" name="button" >Registro</button>
+              </div>
+          </form>
+        </div>
