@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   username:string;
   pass:string;
   checkLogin:boolean;
-
+  checkRegister:boolean;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -21,18 +21,30 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
   }
+
   ngDoCheck(){
     // si esta en el localStorage checkLogin true,
    const login = JSON.parse(localStorage.getItem('login'));
    if(!login){
+     console.log('logeado');
    } else {
+     console.log('deslogeado');
+
+
+   }
+   const register = JSON.parse(localStorage.getItem('register'));
+   if(!register){
+     this.checkRegister=false;
+   } else {
+     this.checkRegister = true;
 
 
    }
   }
   async loguearse(){
-   const res = await this.userService.getUser();
+   const res = await this.userService.getUser(this.username, this.password);
    this.router.navigate(['/city']);
     // console.log(res);
     //

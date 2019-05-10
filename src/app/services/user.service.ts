@@ -8,7 +8,7 @@ export class UserService {
 
   constructor() { }
 
-  async getUser(){
+  async getUser(email, password){
     try {
       const url = "https://reqres.in/api/login";
       let data = {email: "eve.holt@reqres.in", password: "cityslicka"}
@@ -28,7 +28,7 @@ export class UserService {
     }
   }
 
-  async getRegister(){
+  async getRegister(email, password){
     try {
       const url = "https://reqres.in/api/register";
       let data = {email: "eve.holt@reqres.in", password: "pistol"}

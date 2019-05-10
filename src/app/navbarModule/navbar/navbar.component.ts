@@ -23,6 +23,7 @@ checkRegister:boolean;
     const login = JSON.parse(localStorage.getItem('login'));
     if(!login){
       this.checkLogin=false;
+
     } else {
       this.checkLogin = true;
 

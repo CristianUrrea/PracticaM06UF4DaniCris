@@ -1,13 +1,36 @@
-<div>
-          <form>
-              <div >
-                <input  [(ngModel)]="this.username" type="text" name="username" placeholder="Nombre">
-              </div>
-              <div >
-                <input  [(ngModel)]="this.pass" type="password" name="password" placeholder="Contraseña" required>
-              </div>
-              <div >
-                <button (click)="registro()" type="button" name="button" >Registro</button>
-              </div>
-          </form>
+<!-- <div class="container">
+  <div class="col-6 offset-3">
+    <form>
+        <div class="form-group">
+          <input  class="form-control" [(ngModel)]="this.username" type="text" name="username" placeholder="Nombre">
         </div>
+        <div class="form-group">
+          <input  class="form-control" [(ngModel)]="this.pass" type="password" name="password" placeholder="Contraseña" required>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary" (click)="registro()" type="button" name="button" >Registro</button>
+        </div>
+    </form>
+  </div>
+</div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 col-md-4 offset-4">
+            <div class="account-wall">
+              <h1 class="text-center login-title">Registro</h1>
+
+                <form class="form-signin">
+                  <input  class="form-control" type="text" name="username" placeholder="Nombre" value="eve.holt@reqres.in">
+
+                  <!-- <input  class="form-control" [(ngModel)]="this.username" type="text" name="username" placeholder="Nombre"> -->
+                    <br>
+                    <input  class="form-control"  type="password" name="password" placeholder="Contraseña" value="cityslicka" required>
+
+                  <!-- <input  class="form-control" [(ngModel)]="this.pass" type="password" name="password" placeholder="Contraseña" required> -->
+                  <button class="btn btn-primary btn-lg btn-block" btn-block (click)="registro()" type="button" name="button" >Registro</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -14,6 +14,8 @@ export class CityComponent implements OnInit {
   cityWeather:string;
   fromDate;
   toDate;
+  display: boolean;
+
   citys:Array<Object> = [
       {num: 753692, name: "Barcelona"},
       {num: 1118370, name: "Tokyo"},
@@ -38,17 +40,36 @@ export class CityComponent implements OnInit {
   }
 
   async toCity(){
+
     const dateSendingToServer = new DatePipe('en-US').transform(this.fromDate, 'yyyy/MM/dd')
 
     // console.log(dateSendingToServer);
 
-    this.cityNum = +this.cityNum;
-    console.log(this.cityNum);
-    const city_res = await this.weatherService.getCity(this.cityNum, dateSendingToServer);
+    if(this.cityNum == null){
+      alert("¡Seleccione una ciudad!");
 
-    // this.cityWeather = JSON.stringify(city_res[0]);
-    this.cityWeather = city_res;
+    } else {
+      this.cityNum = +this.cityNum;
 
-    console.log(city_res);
+      console.log(this.cityNum);
+      if(dateSendingToServer == null){
+        alert("¡Seleccione la fecha!");
+
+      } else {
+        const city_res = await this.weatherService.getCity(this.cityNum, dateSendingToServer);
+        if(city_res == null){
+          alert("nulo");
+          } else {
+            // this.cityWeather = JSON.stringify(city_res[0]);
+            this.cityWeather = city_res;
+
+            this.display = true;
+            console.log(city_res);
+          }
+      }
+
+    }
+
+
   }
 }

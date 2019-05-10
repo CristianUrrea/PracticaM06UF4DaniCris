@@ -23,7 +23,7 @@ export class RegisterComponent implements OnInit {
   }
 
     async registro(){
-     const res = await this.userService.getRegister();
+     const res = await this.userService.getRegister(this.username, this.pass);
      alert("Register succed");
       // console.log(res);
       //

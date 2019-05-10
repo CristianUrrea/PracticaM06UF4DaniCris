@@ -1,6 +1,8 @@
 #table1 td {
-  padding: 20px;
+  padding: 23px;
 }
 #table2 td {
-  padding: 17px;
+  padding: 30px 10px 20px 0px;
+  width: 40%;
+  text-align: center;
 }

@@ -1,66 +1,72 @@
-<select type="number" [(ngModel)]="cityNum">
-    <option [ngValue]="undefined" disabled  selected>Seleccione una ciudad:</option>
-    <option *ngFor="let city of citys" [ngValue]="city.num">{{city.name}}</option>
-  </select>
-  <br>
-  <div class="">
-{{cityNum}}
+<div class="container">
+  <div class="col-12 offset-1">
+    <select class="form-control form-control-lg" type="number" [(ngModel)]="cityNum">
+        <option [ngValue]="undefined" disabled  selected>Seleccione una ciudad:</option>
+        <option *ngFor="let city of citys" [ngValue]="city.num">{{city.name}}</option>
+      </select>
+      <br>
+      <div class="">
+    <!-- {{cityNum}} -->
+      </div>
+    <input type="date" id="fromDate" [(ngModel)]="fromDate" name="fromDate" >
+    {{fromDate}}
+    <button (click)="toCity()">Aceptar</button>
+    <div *ngIf="display==true">
+      <!-- {{cityWeather}} -->
+<hr>
+<br>
+      <table class="table col-1" style="float: left;" id="table1">
+        <thead>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              Hora
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Tiempo
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Temp Max
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Temp Min
+            </td>
+          </tr>
+          <tr>
+            <td>
+            Humedad
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+      <table *ngFor="let weather of cityWeather; let i=index" style="float: left;" id="table2">
+        <tbody>
+          <tr *ngIf="i<5">
+            <td>{{weather.created.substr(11, 8)}}</td>
+          </tr>
+          <tr *ngIf="i<5">
+            <td><img src="https://www.metaweather.com/static/img/weather/{{weather.weather_state_abbr}}.svg" alt="" height="50" width="50"></td>
+          </tr>
+          <tr *ngIf="i<5">
+            <td >{{weather.max_temp | number : '1.2-2'}}º</td>
+          </tr>
+          <tr *ngIf="i<5">
+            <td>{{weather.min_temp | number : '1.2-2'}}º</td>
+          </tr>
+          <tr *ngIf="i<5">
+            <td>{{weather.humidity}}%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-<input type="date" id="fromDate" [(ngModel)]="fromDate" name="fromDate" >
-{{fromDate}}
-<button (click)="toCity()">Submit</button>
-<div class="">
-  <!-- {{cityWeather}} -->
 
-  <table style="float: left;" id="table1">
-    <thead>
-    </thead>
-    <tbody>
-      <tr>
-        <td>
-          fecha
-        </td>
-      </tr>
-      <tr>
-        <td>
-          weather
-        </td>
-      </tr>
-      <tr>
-        <td>
-          temp max
-        </td>
-      </tr>
-      <tr>
-        <td>
-          temp min
-        </td>
-      </tr>
-      <tr>
-        <td>
-        humidity
-        </td>
-      </tr>
-
-    </tbody>
-  </table>
-  <table *ngFor="let weather of cityWeather; let i=index" style="float: left;" id="table2">
-    <tbody>
-      <tr *ngIf="i<5">
-        <td>{{weather.created}}</td>
-      </tr>
-      <tr *ngIf="i<5">
-        <td><img src="https://www.metaweather.com/static/img/weather/{{weather.weather_state_abbr}}.svg" alt="" height="50" width="50"></td>
-      </tr>
-      <tr *ngIf="i<5">
-        <td >{{weather.max_temp | number : '1.2-2'}}</td>
-      </tr>
-      <tr *ngIf="i<5">
-        <td>{{weather.min_temp | number : '1.2-2'}}</td>
-      </tr>
-      <tr *ngIf="i<5">
-        <td>{{weather.humidity}}</td>
-      </tr>
-    </tbody>
-  </table>
 </div>
